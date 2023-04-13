@@ -11,7 +11,24 @@ public class Main {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		salarioLiquido(sc);
+		
+		float bruteSalary, additionalNocturne, hoursExt, descont, liquidSalary;
+
+		System.out.print("Salário Bruto: ");
+		bruteSalary = sc.nextFloat();
+
+		System.out.print("Adicional Noturno: ");
+		additionalNocturne = sc.nextFloat();
+
+		System.out.print("Horas Extras: ");
+		hoursExt = sc.nextFloat();
+
+		System.out.print("Desconto: ");
+		descont = sc.nextFloat();
+
+		liquidSalary = bruteSalary + additionalNocturne + (hoursExt * 5) - descont;
+
+		System.out.println("Salário Liquido: " + String.format("%.2f", liquidSalary));			
 
 		sc.close();
 
@@ -43,26 +60,6 @@ public class Main {
 		System.out.println("Média Final: " + String.format("%.1f", sum / notes.length));
 	}
 
-	public static void salarioLiquido(Scanner sc) {
-
-		float bruteSalary, additionalNocturne, hoursExt, descont, liquidSalary;
-
-		System.out.print("Salário Bruto: ");
-		bruteSalary = sc.nextFloat();
-
-		System.out.print("Adicional Noturno: ");
-		additionalNocturne = sc.nextFloat();
-
-		System.out.print("Horas Extras: ");
-		hoursExt = sc.nextFloat();
-
-		System.out.print("Desconto: ");
-		descont = sc.nextFloat();
-
-		liquidSalary = bruteSalary + additionalNocturne + (hoursExt * 5) - descont;
-
-		System.out.println("Salário Liquido: " + String.format("%.2f", liquidSalary));
-	}
 
 	public static void diferencaEntreValores(Scanner sc) {
 		float[] n = new float[4];
